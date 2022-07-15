@@ -14,6 +14,7 @@ public class User {
     private long id;
     private String name;
     private String password;
+    private String token;
 
     @ManyToOne
     @JoinColumn(name = "item_id", referencedColumnName = "id")
@@ -27,6 +28,10 @@ public class User {
         super();
         this.name = name;
         this.password = passw;
+    }
+
+    public User get(){
+        return this;
     }
 
     public List<Item> getItems(){
@@ -56,6 +61,14 @@ public class User {
 
     public void setPassword(String passw){
         this.password = passw;
+    }
+
+    public String getToken(){
+        return token;
+    }
+
+    public void setToken(String token){
+        this.token = token;
     }
 
     @Override

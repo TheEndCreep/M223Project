@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    @Query(value = "SELECT u FROM User u where u.name = ?1 and u.password = ?2 ")
-    Optional login(String name, String password);
-    Optional findByToken (String token);
+public interface UserRepository extends JpaRepository<AppUser, Long> {
+    @Query(value = "SELECT u FROM AppUser u where u.name = ?1 and u.password = ?2 ")
+    Optional<AppUser> login(String name, String password);
+    Optional<AppUser> findByToken (String token);
 }
