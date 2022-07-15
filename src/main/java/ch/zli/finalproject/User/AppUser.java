@@ -8,7 +8,7 @@ import javax.persistence.*;
 import ch.zli.finalproject.Item.Item;
 
 @Entity
-public class User {
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -20,17 +20,17 @@ public class User {
     @JoinColumn(name = "item_id", referencedColumnName = "id")
     private List<Item> items = new ArrayList<Item>();
 
-    public User(){
+    public AppUser(){
         super();
     }
 
-    public User(String name, String passw){
+    public AppUser(String name, String passw){
         super();
         this.name = name;
         this.password = passw;
     }
 
-    public User get(){
+    public AppUser get(){
         return this;
     }
 
